@@ -1,6 +1,16 @@
-1)_ cors: ¿por que el navegador bloquea por defecto una peticionde JavaScript que intenta acceder a un dominio o puerto diferente?¿que cabecera (header) 
+1)_ cors: ¿por que el navegador bloquea por defecto una peticion de JavaScript que intenta acceder a un dominio o puerto diferente?¿que cabecera (header) 
 envia el servidor para autorizar esta accion?
 2)_Metodos  HTTP: Explique tecnicamente por que para "crear" un recurso usamos el metodo POST y no GET. 
 Tenga en cuenta aspectos como la visibilidad de los datos en la URL y la idempotencia.
-3)_JSON:¿que funcion de javascript utilizamos para convertir un objeto literal en una cadena de texto lista para ser enviada por HTTP?¿Y para el proceso inverso?
+3)_JSON:¿que funcion de javascript utilizamos para convertir un objeto literal en una cadena de texto lista para ser enviada por HTTP?¿Y para el proceso inverso? 
+
+1)_El bloqueo por defecto protege a los usuarios de accesos no autorizados entre dominios. Para permitir que un script acceda a recursos de otro origen, el servidor debe responder con los encabezados CORS correctos, siendo 
+Access-Control-Allow-Origin el más importante, y opcionalmente otros encabezados para métodos, cabeceras y credenciales. Esto asegura que la comunicación cross-origin sea segura y controlada. 
+
+2)_POST se utiliza porque es el único método cuya definición estándar permite alterar el estado del servidor de forma no determinista, manejando cargas 
+útiles complejas que el modelo de "solo lectura" de GET simplemente no puede procesar sin comprometer la integridad y la seguridad de la comunicación.
+
+3)_Para convertir un objeto literal en una cadena de texto se usa JSON es importante porque el protocolo HTTP transporta texto plano; no puede enviar un objeto vivo de la memoria de JavaScript a través de la red.(que se usa JSON.stringify(objeto))
+Pero para el proceso inverso cuando recibes una respuesta de una API en formato de texto y necesitas volver a manipularla como un objeto de JavaScript, se usa: JSON.parse(cadenaTexto)
+esto analiza la cadena de texto y, si cumple con la sintaxis JSON, reconstruye el objeto original para que puedas acceder a sus propiedades (ejemplo:datos,nombre).
 
