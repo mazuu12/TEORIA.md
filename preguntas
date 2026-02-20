@@ -1,0 +1,6 @@
+1)_ cors: ¿por que el navegador bloquea por defecto una peticionde JavaScript que intenta acceder a un dominio o puerto diferente?¿que cabecera (header) 
+envia el servidor para autorizar esta accion?
+2)_Metodos  HTTP: Explique tecnicamente por que para "crear" un recurso usamos el metodo POST y no GET. 
+Tenga en cuenta aspectos como la visibilidad de los datos en la URL y la idempotencia.
+3)_JSON:¿que funcion de javascript utilizamos para convertir un objeto literal en una cadena de texto lista para ser enviada por HTTP?¿Y para el proceso inverso?
+
